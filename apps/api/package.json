@@ -1,0 +1,23 @@
+{
+  "name": "@mesa-mestre/api",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/app.js"
+  },
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/app.ts"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.4.1",
+    "@elysiajs/openapi": "^1.4.14",
+    "better-auth": "^1.4.18",
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "module": "src/index.js"
+}
