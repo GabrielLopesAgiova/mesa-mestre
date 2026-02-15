@@ -1,7 +1,15 @@
 {
     "name": "mesa-mestre",
     "private": true,
+    "packageManager": "bun@1.3.9",
     "workspaces": [
-        "apps/*"
-    ]
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "dev": "turbo dev"
+    },
+    "devDependencies": {
+        "turbo": "^2.8.9"
+    }
 }
