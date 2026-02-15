@@ -1,20 +1,13 @@
-import { Elysia, t } from 'elysia'
-import { cors } from '@elysiajs/cors'
-import { openapi } from '@elysiajs/openapi'
+import { Elysia } from 'elysia'
+import { plugins } from './plugins'
 
-const app = new Elysia()
-  .use(
-    cors({
-      origin: 'http://localhost:3000',
-      credentials: true
-    })
-  )
-  .use(openapi()) 
+export const app = new Elysia()
+  .use(plugins)
   .get('/', () => 'Hello Elysia')
   .listen(3333)
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+)
 
-export type App = typeof app;
+export type App = typeof app
