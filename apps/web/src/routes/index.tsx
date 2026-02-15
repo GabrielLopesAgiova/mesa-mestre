@@ -5,7 +5,6 @@ import { api } from '@/client-api'
 export const Route = createFileRoute('/')({ component: App })
 
 const response = await api.get()
-console.log("oi",response.data)
 
 function App() {
   return (
