@@ -4,8 +4,6 @@ import { api } from '@/client-api'
 
 export const Route = createFileRoute('/')({ component: App })
 
-const response = await api.get()
-
 function App() {
   return (
     <div className="App">
@@ -27,7 +25,6 @@ function App() {
         >
           Learn React
         </a>
-        {response.data}
         <a
           className="App-link"
           href="https://tanstack.com"
