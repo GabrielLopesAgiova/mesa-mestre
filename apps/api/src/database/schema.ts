@@ -2,8 +2,7 @@ import {
     pgTable,
     varchar,
     timestamp
-} from 'drizzle-orm/pg-core';
-
+} from 'drizzle-orm/pg-core'
 import { createId } from '@paralleldrive/cuid2'
 
 export const user = pgTable(
@@ -12,21 +11,15 @@ export const user = pgTable(
         id: varchar('id')
             .$defaultFn(() => createId())
             .primaryKey(),
-        username: varchar('username')
-            .notNull()
-            .unique(),
-        password: varchar('password')
-            .notNull(),
-        email: varchar('email')
-            .notNull(),
-        createdAt: timestamp('created_at')
-            .defaultNow()
-            .notNull(),
+        username: varchar('username').notNull().unique(),
+        password: varchar('password').notNull(),
+        email: varchar('email').notNull().unique(),
+        createdAt: timestamp('created_at').defaultNow().notNull(),
     }
 )
 
 export const table = {
-    user
+	user
 } as const
 
 export type Table = typeof table
