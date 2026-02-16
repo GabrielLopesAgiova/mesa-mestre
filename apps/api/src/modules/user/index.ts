@@ -6,9 +6,7 @@ export const user = new Elysia({ prefix: 'user'})
     .post(
         '',
         async({ body }) => {
-            const response = await User.createUser(body)
-
-            return response
+            return await User.createUser(body)
         },
         {
             body: UserModel.createUserBody,

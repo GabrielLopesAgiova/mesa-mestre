@@ -1,9 +1,10 @@
 import { Elysia } from 'elysia'
 import { plugins } from './plugins'
+import { user } from './modules/user'
 
 export const app = new Elysia()
   .use(plugins)
-  .get('/', () => 'Hello Elysia')
+  .use(user)
   .listen(3333)
 
 console.log(

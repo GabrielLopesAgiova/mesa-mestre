@@ -1,6 +1,6 @@
-import { db } from "@database/index";
+import { db } from "@database";
 import { UserModel } from "./model";
-import { user } from "@database/schema";
+import { table } from "@database/schema";
 
 export abstract class User {
     static async createUser ({ 
@@ -9,19 +9,18 @@ export abstract class User {
         password } : UserModel.CreateUserBody)
     {
         const hashedPassword = await Bun.password.hash(password)
-
         const [createdUser] = await db
-            .insert(user)
+            .insert(table.user)
             .values({
                 username,
                 email,
                 password: hashedPassword
             })
             .returning({
-                id: user.id,
-                username: user.username,
-                email: user.email,
-                createdAt: user.createdAt
+                id: table.user.id,
+                username: table.user.username,
+                email: table.user.email,
+                createdAt: table.user.createdAt
             })
 
         return createdUser

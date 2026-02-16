@@ -1,18 +1,18 @@
-import { table, user } from '@database/schema'
-import { createInsertSchema, createSelectSchema } from 'drizzle-zod'
-import z from 'zod'
+import { z } from 'zod'
 
 export namespace UserModel {
-    // Create User
-    export const createUserBody = createInsertSchema(user, {
+    export const createUserBody = z.object({
         username: z.string(),
         email: z.email(),
         password: z.string().min(6)
-    }).omit({ id: true, createdAt: true})
+    })
     export type CreateUserBody = z.infer<typeof createUserBody>
 
-    export const createUserResponse = createSelectSchema(user)
-        .omit({password: true})
+    export const createUserResponse = z.object({
+        id: z.string(),
+        username: z.string(),
+        email: z.string(),
+        createdAt: z.date()
+    })
     export type CreateUserResponse = z.infer<typeof createUserResponse>
 }
-
