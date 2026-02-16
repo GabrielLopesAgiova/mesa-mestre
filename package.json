@@ -1,15 +1,17 @@
 {
     "name": "mesa-mestre",
-    "private": true,
+    "devDependencies": {
+        "turbo": "^2.8.9"
+    },
     "packageManager": "bun@1.3.9",
+    "private": true,
+    "scripts": {
+        "dev": "turbo dev",
+        "db:push": "bun --cwd apps/api drizzle-kit push",
+        "db:reset": "bun --cwd apps/api drizzle-kit push --force"
+    },
     "workspaces": [
         "apps/*",
         "packages/*"
-    ],
-    "scripts": {
-        "dev": "turbo dev"
-    },
-    "devDependencies": {
-        "turbo": "^2.8.9"
-    }
+    ]
 }
