@@ -32,7 +32,8 @@
     "paths": {
       "@database/*": ["src/database/*"],
       "@plugins": ["src/plugins"],
-      "@modules": ["src/modules"]
+      "@modules": ["src/modules"],
+      "@database": ["src/database"]
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
