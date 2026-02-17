@@ -8,7 +8,7 @@ export const app = new Elysia()
   .listen(3333)
 
 console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+  `🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
 )
 
 export type App = typeof app
