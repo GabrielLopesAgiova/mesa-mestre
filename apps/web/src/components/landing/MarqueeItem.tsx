@@ -13,7 +13,7 @@ const MarqueeItem = ({ text, from, to }: Props) => {
       <motion.div
         initial={{ x: `${from}` }}
         animate={{ x: `${to}` }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         className="flex shrink-0"
       >
         <p>{text}</p>
@@ -22,7 +22,7 @@ const MarqueeItem = ({ text, from, to }: Props) => {
       <motion.div
         initial={{ x: `${from}` }}
         animate={{ x: `${to}` }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         className="flex shrink-0"
       >
         <p>{text}</p>

@@ -1,12 +1,13 @@
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
-import Image from "next/image";
+import Resources from "@/components/landing/resources";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Header />
-      <Hero title="Mesa Mestre" splitTitle={true} subtitle="Gerencie suas Aventuras!"/>
-    </div>
+      <Hero title="Mesa Mestre" splitTitle={true} subtitle="Organize campanhas, jogadores e sessões em um só lugar."/>
+      <Resources />
+    </>
   );
 }
